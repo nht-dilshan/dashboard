@@ -19,33 +19,35 @@ function App() {
     setIsAuthenticated(true);
   };
 
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+  };
 
   return (
     <Router>
       <div className="dashboard">
-        {isAuthenticated && <Sidebar />}
+        {isAuthenticated && <Sidebar onLogout={handleLogout} />}
         <div className="dashboard-content">
           <Routes>
-            {/* Redirect to login if user is not authenticated */}
+            {/* Public Routes - Only accessible when not authenticated */}
             {!isAuthenticated ? (
               <>
-                <Route path="/" element={<Login onLogin={handleLogin} />} />
                 <Route path="/login" element={<Login onLogin={handleLogin} />} />
                 <Route path="/signup" element={<Signup />} />
-                {/* Redirect any other path to login */}
+                {/* Redirect all other paths to login */}
                 <Route path="*" element={<Navigate to="/login" />} />
               </>
             ) : (
               <>
-                {/* Authenticated routes */}
-                <Route path="/" element={<><Content /><Profile /></>} />
+                {/* Authenticated Routes */}
+                <Route path="/" element={<div><Content /><Profile /></div>} />
                 
-                <Route path="/assignment" element={<><Assignment /><Profile /></>} />
-                <Route path="/report" element={<><Report /><Profile /></>} />
-                <Route path="/stats" element={<><Stats /><Profile /></>} />
-                <Route path="/tasks" element={<><Tasks /><Profile /></>} />
-                <Route path="/help" element={<><Help /><Profile /></>} />
-                {/* Redirect any other path to dashboard */}
+                <Route path="/assignment" element={<div><Assignment /><Profile /></div>} />
+                <Route path="/report" element={<div><Report /><Profile /></div>} />
+                <Route path="/stats" element={<div><Stats /><Profile /></div>} />
+                <Route path="/tasks" element={<div><Tasks /><Profile /></div>} />
+                <Route path="/help" element={<div><Help /><Profile /></div>} />
+                {/* Redirect all other paths to the dashboard */}
                 <Route path="*" element={<Navigate to="/" />} />
               </>
             )}

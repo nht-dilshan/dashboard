@@ -1,5 +1,4 @@
-
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import {
   BiHome,
   BiBookAlt,
@@ -8,10 +7,19 @@ import {
   BiStats,
   BiTask,
   BiHelpCircle,
+  BiLogOut,
 } from 'react-icons/bi';
+import PropTypes from 'prop-types';
 import '../styles/sidebar.css';
 
-const Sidebar = () => {
+const Sidebar = ({ onLogout }) => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    onLogout(); // Update authentication state
+    navigate('/login'); // Redirect to login page
+  };
+
   const menuItems = [
     { path: "/", label: "Dashboard", icon: <BiHome /> },
     { path: "/assignment", label: "Assignment", icon: <BiMessage /> },
@@ -33,15 +41,22 @@ const Sidebar = () => {
             key={index}
             to={item.path}
             className="item"
-            activeClassName="active"
           >
-            <span className="icon">{item.icon}</span>
+            {item.icon}
             {item.label}
           </NavLink>
         ))}
+        <button className="item logout" onClick={handleLogout} >
+          <BiLogOut />
+          Logout
+        </button>
       </div>
     </div>
   );
+};
+
+Sidebar.propTypes = {
+  onLogout: PropTypes.func.isRequired,
 };
 
 export default Sidebar;

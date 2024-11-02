@@ -1,26 +1,32 @@
+/* src/styles/sidebar.css */
 .menu {
     display: flex;
     flex-direction: column;
     gap: 2.3rem;
     height: 94vh;
-}
-.logo {
+  }
+  
+  .logo {
     text-align: center;
     padding: 20px;
     color: #27374d;
-    align-items: center;
     display: flex;
+    align-items: center;
     gap: 20px;
-}
-.logo-icon {
+  }
+  
+  .logo-icon {
     font-size: 1.4rem;
-}
-.menu-list {
+  }
+  
+  .menu-list {
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-.menu-list .item {
+    flex-grow: 1;
+  }
+  
+  .menu-list .item {
     display: flex;
     align-items: center;
     gap: 20px;
@@ -31,9 +37,31 @@
     border-radius: 10px;
     transition: 0.3s ease-in-out;
     color: #27374d;
-}
-.menu-list .item:hover,
-.menu-list .item.active {
+  }
+  
+  .menu-list .item:hover,
+  .menu-list .item.active {
     background-color: #27374d;
     color: #dde6ed !important;
-}
+  }
+  
+  .menu-list .logout {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+    color: #27374d;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .menu-list .logout:hover {
+    background-color: #27374d;
+    color: #dde6ed !important;
+  }
+  

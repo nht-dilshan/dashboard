@@ -1,0 +1,56 @@
+.signup-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f9f9f9;
+    flex: 1;
+    background: #dde6ed;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    transition: 0.5s ease-in-out;
+}
+
+.signup-container h1 {
+    text-align: center;
+}
+
+.signup-container form div {
+    margin-bottom: 15px;
+}
+
+.signup-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+/* Button Styles */
+.signup-button {
+    display: inline-block; /* Allow width and height */
+    padding: 12px 20px; /* Add padding for size */
+    font-size: 1rem; /* Font size */
+    color: #ffffff; /* Text color */
+    background-color: #4CAF50; /* Green background */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    text-align: center; /* Center text */
+}
+
+/* Hover effect */
+.signup-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* Active state effect */
+.signup-button:active {
+    transform: scale(0.95); /* Slightly shrink button on click */
+}

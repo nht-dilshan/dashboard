@@ -1,21 +1,30 @@
-.login-container, .signup-container {
+.login-container {
     max-width: 400px;
     margin: auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background: #f9f9f9;
+    flex: 1;
+    background: #dde6ed;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    transition: 0.5s ease-in-out;
 }
 
-.login-container h1, .signup-container h1 {
+.login-container h1{
     text-align: center;
 }
 
-.login-container form div, .signup-container form div {
+.login-container form div {
     margin-bottom: 15px;
 }
 
-.login-container input, .signup-container input {
+.login-container input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
