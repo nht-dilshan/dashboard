@@ -1,0 +1,23 @@
+.login-container, .signup-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+.login-container h1, .signup-container h1 {
+    text-align: center;
+}
+
+.login-container form div, .signup-container form div {
+    margin-bottom: 15px;
+}
+
+.login-container input, .signup-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
